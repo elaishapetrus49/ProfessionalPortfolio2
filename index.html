@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emma Petrus - Portfolio</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-picture {
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #6051e2;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .section {
+      display: none;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      /* Adjust the min/max width as needed */
+      gap: 20px;
+      /* Adjust the gap between videos */
+    }
+
+    .photo-gallery iframe {
+      width: 100%;
+      /* Ensure videos take full width of their container */
+      height: auto;
+      /* Maintain aspect ratio */
+      border: none;
+      /* Remove iframe border */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Add a subtle shadow */
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      background: #333 url('7.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .container-fluid {
+      padding-left: 0;
+    }
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+      }
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #333;
+      /* Dark background color */
+      padding: 10px 0;
+      /* Adjust top and bottom padding */
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      /* White text color */
+      padding: 10px 15px;
+      /* Padding around the links */
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #f0f0f0;
+      /* Lighter text color on hover */
+    }
+
+    .navbar-dark .navbar-nav .active>.nav-link {
+      color: #f0f0f0;
+      /* Text color for active link */
+      background-color: #6051e2;
+      /* Background color for active link */
+      border-radius: 5px;
+      /* Rounded corners for active link */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .section {
+        padding: 10px;
+        /* Reduce padding in sections for smaller screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        height: auto;
+        /* Adjust sidebar height to be auto for smaller screens */
+        background-size: cover;
+        /* Ensure background covers fully */
+        text-align: center;
+        /* Center text in sidebar for smaller screens */
+      }
+
+      .navbar {
+        padding: 5px 0;
+        /* Reduce navbar padding for smaller screens */
+      }
+
+      .navbar-toggler {
+        margin-right: 10px;
+        /* Adjust margin for the navbar toggler */
+      }
+
+      .navbar-collapse {
+        margin-top: 10px;
+        /* Add margin on top for the collapsed navbar */
+      }
+
+      .skills-list,
+      .roles-list {
+        padding-left: 20px;
+        /* Indent lists for better readability */
+      }
+
+      .job-details {
+        margin-bottom: 20px;
+        /* Add bottom margin to job details sections */
+      }
+
+      .portfolio-links a {
+        display: block;
+        /* Make portfolio links block-level for easier tapping on mobile */
+        margin-bottom: 10px;
+        /* Add margin between portfolio links */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section {
+        padding: 5px;
+        /* Further reduce padding in sections for smaller screens */
+      }
+
+      .navbar-nav .nav-item {
+        margin-bottom: 5px;
+        /* Adjust margin between navbar items */
+      }
+
+      .article-content img {
+        width: 100%;
+        /* Ensure images in articles take full width */
+      }
+
+      .article-content p {
+        font-size: 14px;
+        /* Reduce font size for paragraphs in articles */
+        line-height: 1.6;
+        /* Adjust line height for better readability */
+      }
+
+      .portfolio-links a {
+        font-size: 14px;
+        /* Reduce font size for portfolio links */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 bg-light p-4 sidebar">
+        <header class="text-center">
+          <img src="IMG_36.png" alt="Emma Petrus" class="profile-picture img-fluid mx-auto d-block">
+          <h1 class="h4 mt-3">
+            <i class="fas fa-star"></i>
+            Welcome to my Portfolio!
+            <i class="fas fa-star"></i>
+          </h1>
+          <p>
+            <i class="fas fa-pen-nib"></i>
+            I'm <span>Emma Petrus</span>, an experienced journalist with a passion for storytelling and uncovering the
+            truth.
+            <i class="fas fa-pen-nib"></i>
+          </p>
+
+        </header>
+
+
+      </div>
+
+      <div class="col-md-9">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a href="#about" class="nav-link" onclick="showSection('about')">About</a></li>
+              <li class="nav-item"><a href="#portfolio" class="nav-link"
+                  onclick="showSection('portfolio')">Portfolio</a></li>
+              <li class="nav-item"><a href="#skills" class="nav-link" onclick="showSection('skills')">Skills & Roles</a>
+              </li>
+              <li class="nav-item"><a href="#experience" class="nav-link"
+                  onclick="showSection('experience')">Experience</a></li>
+              <li class="nav-item"><a href="#training" class="nav-link" onclick="showSection('training')">Training &
+                  Education</a></li>
+
+            </ul>
+          </div>
+        </nav>
+
+        <section id="about" class="section active">
+          <h2>About Me</h2>
+          <p>I have been a journalist for over 5 years, specializing in print, online, and broadcast media. I am
+            dedicated to delivering accurate and thought-provoking reporting. I am passionate about creating impactful
+            stories and engaging with my audience.</p>
+          <p>Biography: I have a rich background in journalism, contributing to numerous publications and working on
+            high-profile stories that have made a significant impact.</p>
+          <p>Mission Statement: As a journalist, my mission is to inform, educate, and engage my audience through
+            accurate and thought-provoking reporting. I believe in the power of journalism to drive positive change and
+            hold those in power accountable.</p>
+          <p>Contact Information:</p>
+          <ul>
+            <li>Email: petrusemma3@gmail.com</li>
+            <li>Phone: 73127139/77226338</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></li>
+            <li>Twitter: <a href="https://twitter.com/yourprofile" target="_blank">Twitter Profile</a></li>
+          </ul>
+        </section>
+
+        <section id="portfolio" class="section">
+          <h2>Portfolio</h2>
+
+          <h3>Articles</h3>
+          <div class="article-content">
+            <img src="WhatsApp Image 2024-06-08 at 20.14.20_22c9be31.jpg" alt="Image Description"
+              class="img-fluid mb-3">
+            <h4>Police Minister's Statement Injudicious and Vexatious, Says Wapunai</h4>
+            <p>Approved for Release: Thursday 11 April, 2024</p>
+            <p>SHADOW Minister for Police Hon. Johnson Wapunai has slammed his counterpart Minister for Police Hon.
+              Peter Tsiamalili Jnr for a “completely inappropriate” statement he released yesterday alleging political
+              coercion with the media, publicly putting a long serving police officer’s reputation in disrepute, and in
+              general commenting on matters now before the court which borders on contempt and sub-judice commentary.
+            </p>
+            <p>Mr Wapunai stated that Mr Tsiamalili’s statement was a complete disgrace to his office and is contrary
+              behaviour to that expected of a leader.</p>
+            <p>Mr Johnson said: “Without stating the obvious, Mr Tsiamalili’s statement was clearly sub-judice and his
+              specific remark that he trusts the Court to ‘expose any attempts to manipulate the justice system for
+              political gain’ is tantamount to contempt on ongoing legal proceedings.</p>
+            <p>“It is inappropriate for a supposed educated minister to talk about matters before the Court for
+              deliberation, and he should know better not to instigate his own trial by media to seek public support for
+              something that will be dealt with appropriately in due course.</p>
+            <p>“It is unbecoming for a minister to suggest that this case is purely political, and is disrespectful to
+              the alleged victims of Mr Manning’s previous actions and behaviour, which in essence is the basis of this
+              case which is now before the National Court.”</p>
+            <p>Mr Wapunai also noted that it was inappropriate for the Minister for Police to comment on matters
+              concerning the Police Commissioner as he is not his spokesman and raises questions about personal
+              collusion over professional conduct.</p>
+            <p>He said that Mr Manning is more than capable to defend himself in Court without the minister’s two toea.
+            </p>
+            <p>Mr Wapunai said: “Additionally, it is completely unacceptable for the minister to suggest that the
+              Opposition or I colluded with the media to somehow promote this case.</p>
+            <p>“As far as I am concerned, the Post-Courier reported on the facts presented and gathered by the Court
+              hearing, which was also covered by the National newspaper on page two of yesterday’s edition.</p>
+            <p>“Both reports contained more or less the same information, with the only difference being the page
+              numbers in which the story appeared — so I don’t know how exactly the minister finds it appropriate to
+              suggest collusion between the media and the Opposition especially when the Court hearing is publicly held.
+            </p>
+            <p>“And how exactly was the matter sensationalised? The headline was "Manning to front court", that is true
+              is it not? Yet another example of desperate tactics by the government to play victim and blame the media
+              to shift the narrative.</p>
+            <p>“Wasn’t it the Police Minister talking about the need to protect the integrity of the media and
+              journalists through the Sensitive Investigation Board, yet here he is making desperate accusations against
+              journalists and media houses?”</p>
+            <p>Mr Wapunai also added that Mr Tsiamalili’s comments about the integrity of the plaintiff, Detective
+              Senior Sergeant Tinol Pakiapon, was a new low point for the government.</p>
+            <p>“Mr Tsiamalili is peddling his own allegations against Mr Pakiapon without any evidence or supporting
+              documentation for these claims.</p>
+            <p>“The Court will no doubt consider all these aspects relating to the case, and if there are any questions
+              or concerns about the integrity of the plaintiff, Mr Manning is entitled to present his own evidence to
+              support his case.</p>
+            <p>“Mr Tsiamalili has no right to start a witch hunt against Mr Pakiapon simply because he is the plaintiff
+              in this matter. The Court is the appropriate authority to decide whether or not there are merits to this
+              matter and until all avenues are sufficiently exhausted to clear David Manning, I suggest Mr Tsiamalili
+              refrain from vouching for a man currently in Court,” Mr Wapunai said.</p>
+            <p>The shadow minister urged Mr Tsiamalili to be sensible in the statements he makes, apologise to the
+              Post-Courier for making unfounded accusations against them, apologise to Detective Senior Sergeant Tinol
+              Pakiapon for bringing his reputation into disrepute without any credible evidence or reason to in the
+              first instance, and let the Court proceedings take its course without desperate efforts to interfere.</p>
+            <p>“The minister’s disrespectful statement not only preempts issues before the Court, but is entirely
+              misleading and defamatory in many aspects. I have asked my lawyers to assess the statement and advise me
+              on possible legal action including citing him for possible contempt of Court.</p>
+            <p>“Focus on your ministerial duties to improve the country’s law and order, you’re not David Manning’s
+              lawyer or spokesman,” Wapunai told Tsiamalili.</p>
+            <p>/// ENDS ///</p>
+            <p>Approved for Release by: Hon. Johnson Wapunai, MP SHADOW MINISTER FOR POLICE & HEALTH</p>
+          </div>
+
+          <div class="article-content">
+            <img src="WhatsApp Image 2024-06-08 at 20.14.20_22c9be31.jpg" alt="Image Description"
+              class="img-fluid mb-3">
+            <h4>Manning Must Make Lasting Impact on Law and Order</h4>
+            <p>Press Statement for Immediate Release: 10 April 2024</p>
+            <p>On behalf of the Opposition, Shadow Minister for Police Hon. Johnson Wapunai has acknowledged Police
+              Commissioner David Manning on his re-appointment for another four years, however, has emphasised that Mr
+              Manning must use his extended tenure to make a lifelong impact on the country’s police force and law and
+              order situation.</p>
+            <p>Mr Wapunai said: “I firstly congratulate Mr Manning for successfully completing his first term, part of
+              which was consumed by his role as COVID-19 pandemic controller. In the history of the RPNGC, only a small
+              number of commissioners have completed their full term, and even then, the number of reappointments are
+              smaller.</p>
+            <p>“While it is an achievement for Mr Manning to maintain his position, he must also realise the next four
+              years will be crucial in fulfilling his duties and performing in a capacity many before him did not have.
+            </p>
+            <p>“In recent times and during the tenure of Mr Manning, we have seen kidnappings and attacks on foreigners,
+              massacres with double digit death tolls, sophisticated transnational criminal elements peddling drugs,
+              widespread election violence, and civil unrest leaving our country crippled.</p>
+            <p>“It has truly been unprecedented times, and it is up to the capability of Mr Manning to curb these
+              issues. He has witnessed these events firsthand so he should be taking active measures to ensure they
+              never happen again.</p>
+            <p>“By 2028, Mr Manning would have had a total of eight years as police commissioner. That is nearly a
+              decade serving at the helm of the force – and if performed without fear or favour, with the country at
+              heart, and servitude of the many and not few, he can institute a lot of change for the better.</p>
+            <p>“I challenge Mr Manning to uphold the values and oath he made in his days as a recruit. He must uphold
+              the true spirit and integrity of the law. As a two term police commissioner, he is now in a league of his
+              own among his predecessors.</p>
+            <p>“Many before him didn’t have the opportunity to serve full terms or twice, so it is incumbent upon him to
+              do them proud with the opportunity he has.”</p>
+            <p>Mr Wapunai urged Mr Manning to use the next four years to institute lasting impacts in the force that
+              will set the bar for future commissioners and reminded him that there is no time to waste when it comes to
+              the country’s security.</p>
+            <p>“The Opposition cannot stress this enough: If we do not seriously address the terrible state of our
+              internal security now, it will never improve and only get worse in the years to come.</p>
+            <p>“The Opposition collectively calls for the improvement of criminal and fraud investigations, improve
+              prosecution services by training officers to be professional and support them adequately, and do away with
+              the Sensitive Investigations Board.</p>
+            <p>“My message to Mr Manning is this: You have sworn your oath to God and country, not any political party
+              or leader. Now that your tenure is ensured, I urge you to carry out your duties according to your oath and
+              instigate change for the good of this nation,” Mr Wapuani said.</p>
+            <p>/// ENDS ///</p>
+            <p>Approved by Hon. Johnson Wapunai, MP SHADOW MINISTER FOR POLICE & HEALTH</p>
+          </div>
+
+          <div class="article-content">
+            <img src="WhatsApp Image 2024-06-08 at 20.14.20_22c9be31.jpg" alt="Image Description"
+              class="img-fluid mb-3">
+            <h4>New Sensitive Investigations Board Raises Serious Questions</h4>
+            <p>Press Statement for Immediate Release: 24 March 2024</p>
+            <p>Shadow Minister for Police Hon. Johnson Wapunai has today cautioned the Police Commissioner and Minister
+              for Police to seriously reconsider the establishment of the Sensitive Investigations Board until more
+              information is known about its functions and administration.</p>
+            <p>The Shadow Minister said the board raises a lot of serious questions about the special oversight given to
+              high profile cases that often times face numerous impediments before prosecution.</p>
+            <p>Mr Wapunai said: “The public needs more information on this new board before the Police Commissioner and
+              his colleagues start scrutinising sensitive cases. With exclusive oversight over cases regarding
+              politicians, statutory office holders and any other individuals the board may deem necessary, it raises
+              the potential for unfair treatment and undue influence.</p>
+            <p>“While Mr Manning’s statement appears well-intended, the reality is expected to be far different unless
+              there is clear information given about this board.”</p>
+            <p>Mr Wapunai also stated that while Mr Manning says the board intends at curbing opportunists from filing
+              ‘dubious complaints’ for personal gain which ultimately get thrown out by court, that in itself is an
+              admission that his rank and file are inadequate in performing investigations before pursuing cases.</p>
+            <p>Mr Wapunai said: “If Mr Manning believes his officers are assisting opportunists pursue their agenda,
+              this board does not fix that. It only cuts down on possible ‘dubious’ cases against office holders but not
+              members of the general public. Mr Manning is effectively creating a VIP processing stream while everyday
+              Papua New Guineans face normal police and judicial process.</p>
+            <p>“By my understanding, if a police station receives a complaint from an individual or party, it is the
+              duty of that particular police officer or unit who received it to investigate the complaint to
+              substantiate whether an arrest and prosecution is warranted.</p>
+            <p>“What Mr Manning is effectively saying is his police officers are colluding with individuals with vested
+              interests to pursue matters of no substance that ultimately get thrown out of court. If this is the case,
+              what is his solution in improving police investigations and ethics of officers, because this board
+              shouldn’t be the only answer.</p>
+            <p>“What gives the Police Commissioner and his board the right to decide guilt or innocence?</p>
+            <p>“The timing of the establishment of this board is also questionable when we see a warrant of arrest for
+              the Electoral Commissioner who is in hiding, an application for a warrant of arrest of David Manning by an
+              experienced police officer, questions over the arrest of the Prime Minister over the Paraka saga, and
+              other high-profile complaints that have been filed.”</p>
+            <p>The Opposition have the following questions for Mr Manning:</p>
+            <ol>
+              <li>How often will this board meet?</li>
+              <li>How diligent will the board be in deciding the fate of the various cases they have to deal with?</li>
+              <li>If the board meets at their own discretion and convenience, and has various cases to deliberate over,
+                will this result in backlogs and a delay in justice?</li>
+              <li>What if the complaint concerns the Prime Minister, Minister of Police, or Police Commissioner? Will
+                the board be unbiased?</li>
+              <li>If there is a complaint about the Police Commissioner like there currently is, doesn’t this raise a
+                conflict of interest with the whole board since Mr Manning is their colleague?</li>
+              <li>Does this mean the current cases before the court or underway need to be reassessed by the board?</li>
+              <li>What if a case that holds merit according to other agencies is denied by the board? What is the next
+                course of action for the complainant?</li>
+              <li>Does this mean that complaints and investigations by ICAC and the Ombudsman Commission will have to
+                seek the endorsement of this board as well?</li>
+              <li>What criteria and justifications will complaints or cases need to meet in order to be approved by the
+                board?</li>
+              <li>When does this board come into effect?</li>
+            </ol>
+            <p>“It is recommended that Mr Manning or the board refrains from making hasty decisions until these
+              questions are answered, and for further transparency, Mr Manning should further explain this new board in
+              detail to organisations like Transparency International, the Media Council, Ombudsman Commission, ICAC and
+              the Department of Justice and Attorney-General for further input,” Mr Wapunai said.</p>
+            <p>/// ENDS ///</p>
+            <p>Approved by Hon. Johnson Wapunai, MP SHADOW MINISTER FOR POLICE & HEALTH</p>
+          </div>
+
+          <div class="portfolio-links">
+            <h3>Related Links</h3>
+            <a
+              href="https://www.thenational.com.pg/journalists-attend-workshop-on-disaster-reporting/#:~:text=Journalists%20have%20been%20trained%20to,and%20preparedness%2C%20to%20educate%20people">Journalists
+              attend workshop on disaster reporting</a>
+            <a href="https://www.postcourier.com.pg/pioneer-male-nurse-awarded/">Pioneer male nurse awarded</a>
+            <a href="https://www.postcourier.com.pg/nursing-college-needs-new-building/">Nursing college needs new
+              building</a>
+          </div>
+        </section>
+
+        <section id="skills" class="section">
+          <h2>Skills & Roles</h2>
+          <p>SKILLS</p>
+          <ul class="skills-list">
+            <li>Government Relations</li>
+            <li>Public Relations</li>
+            <li>Executive Communication</li>
+            <li>Mixed Media Communication</li>
+            <li>Networking</li>
+            <li>Technology Savvy</li>
+          </ul>
+          <p>ROLES</p>
+          <ul class="roles-list">
+            <li>Media Officer</li>
+            <li>Spokesperson</li>
+            <li>First Secretary to Political Figure</li>
+            <li>Freelance Journalist TV/Radio</li>
+          </ul>
+        </section>
+
+        <section id="experience" class="section">
+          <h2>Work Experience</h2>
+
+          <h3>Print & Online Media Publications</h3>
+          <p>List of Publications:</p>
+          <ul>
+            <li><a href="#">Publication 1</a></li>
+            <li><a href="#">Publication 2</a></li>
+          </ul>
+          <div class="job-details">
+            <p class="job-title">Role and Achievements:</p>
+            <p>Description of your role and accomplishments</p>
+          </div>
+
+          <h3>NBC News Simulcast</h3>
+          <div class="job-details">
+            <p class="job-title">Role:</p>
+            <p>Description of your work with NBC News</p>
+            <p class="job-title">Achievements:</p>
+            <p>Highlights of your contributions and impact</p>
+          </div>
+
+          <h3>Freelance Projects</h3>
+          <div class="job-details">
+            <p class="job-title">List of Freelance Projects and Clients:</p>
+            <p>Details of freelance projects and clients</p>
+            <p class="job-title">Stories Covered:</p>
+            <p>Brief summary of notable projects and stories covered</p>
+          </div>
+
+          <h3>Documentaries & Special Reports</h3>
+          <div class="job-details">
+            <p class="job-title">Details:</p>
+            <p>Details of documentaries and special reports you've worked on</p>
+          </div>
+
+          <h3>Work Experience</h3>
+          <div class="job-details">
+            <p class="job-title">A. UPNG PRESS (UNI TAVUR) SUB-EDITOR (5.05.16 - 5.05.17)</p>
+            <ul>
+              <li>Development of Monthly Newsletter</li>
+              <li>News gathering through interviewing UPNG Executives</li>
+              <li>Graphics & Design of UPNG Press (UNI TAVUR)</li>
+            </ul>
+
+            <p class="job-title">B. NATIONAL BROADCASTING Corporation Student Journalist (29.10.18 - 01.02.19)</p>
+            <ul>
+              <li>Parliament Reporter (Radio | TV)</li>
+              <li>Court Reporter (Radio | TV)</li>
+              <li>APEC Political Reporter (Radio | TV)</li>
+              <li>Script Writing for TV/Radio News Reporting</li>
+            </ul>
+
+            <p class="job-title">C. The National Judiciary Staff & Services - (Registry Clerk 22.6.21 - 29.4.22)</p>
+            <ul>
+              <li>Educating Court Users About the Processes of Court</li>
+              <li>Management of Court Reporting on Court Page Post Courier</li>
+              <li>Scheduling Court dates for court sittings on Radio and Print Media</li>
+              <li>Assisting court users on how to file court documents</li>
+            </ul>
+
+            <p class="job-title">D. The National Parliament of PNG (1.6.23 – present)</p>
+            <ul>
+              <li>Media Officer & First Secretary to Assistant Speaker of Parliament and MP for AMBUNTI DREKIKIER Hon
+                Johnson Wapunai</li>
+              <li>Management of internal and external communication of Hon. MP</li>
+              <li>Spokesperson handling controversial political news on social media</li>
+              <li>Monitoring of Political news from TV, Radio, print and online media news</li>
+              <li>Developing Executive Communication Materials for Politicians</li>
+              <li>Accompanying political heads to events for news coverage</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="training" class="section">
+          <h2>Training & Education</h2>
+          <p>EDUCATION</p>
+          <p>Bachelor’s Degree in Journalism and Public Relations | University of PNG | Waigani Campus | 2015-2019</p>
+          <p>EDUCATION AND TRAINING BACKGROUND</p>
+          <ul class="education-list">
+            <li>Bachelor’s Degree in Journalism and Public Relations</li>
+            <li>Certificate in National Broadcasting Cooperation Newsroom Electronic News Reporting Journalist</li>
+            <li>Certificate on Disaster Mitigation and Preparedness Training for Journalists</li>
+            <li>Certificate Media Volunteer for 2016 FIFA U-20 Women's World Cup Papua New Guinea</li>
+            <li>Certificate Financial Literacy with National Judiciary Staff and Services</li>
+            <li>High School Certificates Grade 10 and Grade 12</li>
+            <li>Award’s Certificates in Year 12’s Achievement Legal Studies and Geography</li>
+          </ul>
+        </section>
+
+        <section id="blog" class="section">
+          <h2>Blog</h2>
+          <article>
+            <img src="WhatsApp Image 2024-06-08 at 20.14.20_22c9be31.jpg" alt="Image Description"
+              class="img-fluid mb-3">
+            <h3>Blog Post Title</h3>
+            <p>Blog post content goes here...</p>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Emma Petrus. All rights reserved.</p>
+    <p>Website designed and developed by EKNOWA TECH.</p>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
