@@ -42,20 +42,14 @@
     .photo-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      /* Adjust the min/max width as needed */
       gap: 20px;
-      /* Adjust the gap between videos */
     }
 
     .photo-gallery iframe {
       width: 100%;
-      /* Ensure videos take full width of their container */
       height: auto;
-      /* Maintain aspect ratio */
       border: none;
-      /* Remove iframe border */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      /* Add a subtle shadow */
     }
 
     footer {
@@ -66,17 +60,18 @@
     }
 
     .sidebar {
-      position: -webkit-sticky;
       position: sticky;
       top: 0;
       height: 100vh;
       overflow-y: auto;
       background: #333 url('7.jpg') no-repeat center center/cover;
       color: #fff;
+      padding: 1rem;
     }
 
     .container-fluid {
       padding-left: 0;
+      padding-right: 0;
     }
 
     .row {
@@ -84,122 +79,150 @@
       margin-right: 0;
     }
 
-    /* Responsive adjustments */
+    .section {
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .section.active {
+      background-color: #ffffff;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #333333;
+    }
+
+    .about-content {
+      line-height: 1.6;
+    }
+
+    .about-paragraph {
+      margin-bottom: 15px;
+    }
+
+    .about-contact {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .contact-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-list li span {
+      font-weight: bold;
+      margin-right: 5px;
+      color: #555555;
+    }
+
+    .contact-list a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       .sidebar {
         width: 100%;
-        height: auto;
         position: static;
+        height: auto;
       }
     }
 
-    /* Navbar Styles */
     .navbar {
       background-color: #333;
-      /* Dark background color */
       padding: 10px 0;
-      /* Adjust top and bottom padding */
     }
 
     .navbar-dark .navbar-nav .nav-link {
       color: #fff;
-      /* White text color */
       padding: 10px 15px;
-      /* Padding around the links */
     }
 
     .navbar-dark .navbar-nav .nav-link:hover {
       color: #f0f0f0;
-      /* Lighter text color on hover */
     }
 
     .navbar-dark .navbar-nav .active>.nav-link {
       color: #f0f0f0;
-      /* Text color for active link */
       background-color: #6051e2;
-      /* Background color for active link */
       border-radius: 5px;
-      /* Rounded corners for active link */
     }
 
-    /* Responsive adjustments */
     @media (max-width: 992px) {
       .section {
         padding: 10px;
-        /* Reduce padding in sections for smaller screens */
       }
     }
 
     @media (max-width: 768px) {
       .sidebar {
         height: auto;
-        /* Adjust sidebar height to be auto for smaller screens */
         background-size: cover;
-        /* Ensure background covers fully */
         text-align: center;
-        /* Center text in sidebar for smaller screens */
+        padding-top: 2rem;
       }
 
       .navbar {
         padding: 5px 0;
-        /* Reduce navbar padding for smaller screens */
       }
 
       .navbar-toggler {
         margin-right: 10px;
-        /* Adjust margin for the navbar toggler */
       }
 
       .navbar-collapse {
         margin-top: 10px;
-        /* Add margin on top for the collapsed navbar */
       }
 
       .skills-list,
       .roles-list {
         padding-left: 20px;
-        /* Indent lists for better readability */
       }
 
       .job-details {
         margin-bottom: 20px;
-        /* Add bottom margin to job details sections */
       }
 
       .portfolio-links a {
         display: block;
-        /* Make portfolio links block-level for easier tapping on mobile */
         margin-bottom: 10px;
-        /* Add margin between portfolio links */
       }
     }
 
     @media (max-width: 576px) {
       .section {
         padding: 5px;
-        /* Further reduce padding in sections for smaller screens */
       }
 
       .navbar-nav .nav-item {
         margin-bottom: 5px;
-        /* Adjust margin between navbar items */
       }
 
       .article-content img {
         width: 100%;
-        /* Ensure images in articles take full width */
       }
 
       .article-content p {
         font-size: 14px;
-        /* Reduce font size for paragraphs in articles */
         line-height: 1.6;
-        /* Adjust line height for better readability */
       }
 
       .portfolio-links a {
         font-size: 14px;
-        /* Reduce font size for portfolio links */
       }
     }
   </style>
@@ -251,23 +274,20 @@
         </nav>
 
         <section id="about" class="section active">
-          <h2>About Me</h2>
-          <p>I have been a journalist for over 5 years, specializing in print, online, and broadcast media. I am
-            dedicated to delivering accurate and thought-provoking reporting. I am passionate about creating impactful
-            stories and engaging with my audience.</p>
-          <p>Biography: I have a rich background in journalism, contributing to numerous publications and working on
-            high-profile stories that have made a significant impact.</p>
-          <p>Mission Statement: As a journalist, my mission is to inform, educate, and engage my audience through
-            accurate and thought-provoking reporting. I believe in the power of journalism to drive positive change and
-            hold those in power accountable.</p>
-          <p>Contact Information:</p>
-          <ul>
-            <li>Email: petrusemma3@gmail.com</li>
-            <li>Phone: 73127139/77226338</li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></li>
-            <li>Twitter: <a href="https://twitter.com/yourprofile" target="_blank">Twitter Profile</a></li>
-          </ul>
-        </section>
+          <h1>About Me</h1>
+          <div class="about-content">
+              <p class="about-paragraph">I have been a journalist for over 5 years, specializing in print, online, and broadcast media. I am dedicated to delivering accurate and thought-provoking reporting. I am passionate about creating impactful stories and engaging with my audience.</p>
+              <p class="about-paragraph">Biography: I have a rich background in journalism, contributing to numerous publications and working on high-profile stories that have made a significant impact.</p>
+              <p class="about-paragraph">Mission Statement: As a journalist, my mission is to inform, educate, and engage my audience through accurate and thought-provoking reporting. I believe in the power of journalism to drive positive change and hold those in power accountable.</p>
+              <p class="about-contact">Contact Information:</p>
+              <ul class="contact-list">
+                  <li><span>Email:</span> petrusemma3@gmail.com</li>
+                  <li><span>Phone:</span> 73127139/77226338</li>
+                  
+              </ul>
+          </div>
+      </section>
+      
 
         <section id="portfolio" class="section">
           <h2>Portfolio</h2>
@@ -456,105 +476,79 @@
         </section>
 
         <section id="skills" class="section">
-          <h2>Skills & Roles</h2>
-          <p>SKILLS</p>
+          <h1>Skills & Roles</h1>
+      
+          <h3>SKILLS</h3>
           <ul class="skills-list">
-            <li>Government Relations</li>
-            <li>Public Relations</li>
-            <li>Executive Communication</li>
-            <li>Mixed Media Communication</li>
-            <li>Networking</li>
-            <li>Technology Savvy</li>
+              <li>Government Relations</li>
+              <li>Public Relations</li>
+              <li>Executive Communication</li>
+              <li>Mixed Media Communication</li>
+              <li>Networking</li>
+              <li>Technology Savvy</li>
           </ul>
-          <p>ROLES</p>
+      
+          <h3>ROLES</h3>
           <ul class="roles-list">
-            <li>Media Officer</li>
-            <li>Spokesperson</li>
-            <li>First Secretary to Political Figure</li>
-            <li>Freelance Journalist TV/Radio</li>
+              <li>Media Officer</li>
+              <li>Spokesperson</li>
+              <li>First Secretary to Political Figure</li>
+              <li>Freelance Journalist TV/Radio</li>
           </ul>
-        </section>
+      </section>
+      
 
         <section id="experience" class="section">
           <h2>Work Experience</h2>
-
-          <h3>Print & Online Media Publications</h3>
-          <p>List of Publications:</p>
-          <ul>
-            <li><a href="#">Publication 1</a></li>
-            <li><a href="#">Publication 2</a></li>
-          </ul>
+      
           <div class="job-details">
-            <p class="job-title">Role and Achievements:</p>
-            <p>Description of your role and accomplishments</p>
+              <h3>A. UPNG PRESS (UNI TAVUR) SUB-EDITOR (May 2016 - May 2017)</h3>
+              <ul>
+                  <li>Development of Monthly Newsletter</li>
+                  <li>News gathering through interviewing UPNG Executives</li>
+                  <li>Graphics & Design of UPNG Press (UNI TAVUR)</li>
+              </ul>
+      
+              <h3>B. NATIONAL BROADCASTING Corporation Student Journalist (October 2018 - February 2019)</h3>
+              <ul>
+                  <li>Parliament Reporter (Radio | TV)</li>
+                  <li>Court Reporter (Radio | TV)</li>
+                  <li>APEC Political Reporter (Radio | TV)</li>
+                  <li>Script Writing for TV/Radio News Reporting</li>
+              </ul>
+      
+              <h3>C. The National Judiciary Staff & Services - (Registry Clerk June 2021 - April 2022)</h3>
+              <ul>
+                  <li>Educating Court Users About the Processes of Court</li>
+                  <li>Management of Court Reporting on Court Page Post Courier</li>
+                  <li>Scheduling Court dates for court sittings on Radio and Print Media</li>
+                  <li>Assisting court users on how to file court documents</li>
+              </ul>
+      
+              <h3>D. The National Parliament of PNG (June 2023 – present)</h3>
+              <ul>
+                  <li>Media Officer & First Secretary to Assistant Speaker of Parliament and MP for AMBUNTI DREKIKIER Hon
+                      Johnson Wapunai</li>
+                  <li>Management of internal and external communication of Hon. MP</li>
+                  <li>Spokesperson handling controversial political news on social media</li>
+                  <li>Monitoring of Political news from TV, Radio, print and online media news</li>
+                  <li>Developing Executive Communication Materials for Politicians</li>
+                  <li>Accompanying political heads to events for news coverage</li>
+              </ul>
           </div>
+      </section>
+      
 
-          <h3>NBC News Simulcast</h3>
-          <div class="job-details">
-            <p class="job-title">Role:</p>
-            <p>Description of your work with NBC News</p>
-            <p class="job-title">Achievements:</p>
-            <p>Highlights of your contributions and impact</p>
-          </div>
-
-          <h3>Freelance Projects</h3>
-          <div class="job-details">
-            <p class="job-title">List of Freelance Projects and Clients:</p>
-            <p>Details of freelance projects and clients</p>
-            <p class="job-title">Stories Covered:</p>
-            <p>Brief summary of notable projects and stories covered</p>
-          </div>
-
-          <h3>Documentaries & Special Reports</h3>
-          <div class="job-details">
-            <p class="job-title">Details:</p>
-            <p>Details of documentaries and special reports you've worked on</p>
-          </div>
-
-          <h3>Work Experience</h3>
-          <div class="job-details">
-            <p class="job-title">A. UPNG PRESS (UNI TAVUR) SUB-EDITOR (5.05.16 - 5.05.17)</p>
-            <ul>
-              <li>Development of Monthly Newsletter</li>
-              <li>News gathering through interviewing UPNG Executives</li>
-              <li>Graphics & Design of UPNG Press (UNI TAVUR)</li>
-            </ul>
-
-            <p class="job-title">B. NATIONAL BROADCASTING Corporation Student Journalist (29.10.18 - 01.02.19)</p>
-            <ul>
-              <li>Parliament Reporter (Radio | TV)</li>
-              <li>Court Reporter (Radio | TV)</li>
-              <li>APEC Political Reporter (Radio | TV)</li>
-              <li>Script Writing for TV/Radio News Reporting</li>
-            </ul>
-
-            <p class="job-title">C. The National Judiciary Staff & Services - (Registry Clerk 22.6.21 - 29.4.22)</p>
-            <ul>
-              <li>Educating Court Users About the Processes of Court</li>
-              <li>Management of Court Reporting on Court Page Post Courier</li>
-              <li>Scheduling Court dates for court sittings on Radio and Print Media</li>
-              <li>Assisting court users on how to file court documents</li>
-            </ul>
-
-            <p class="job-title">D. The National Parliament of PNG (1.6.23 – present)</p>
-            <ul>
-              <li>Media Officer & First Secretary to Assistant Speaker of Parliament and MP for AMBUNTI DREKIKIER Hon
-                Johnson Wapunai</li>
-              <li>Management of internal and external communication of Hon. MP</li>
-              <li>Spokesperson handling controversial political news on social media</li>
-              <li>Monitoring of Political news from TV, Radio, print and online media news</li>
-              <li>Developing Executive Communication Materials for Politicians</li>
-              <li>Accompanying political heads to events for news coverage</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="training" class="section">
-          <h2>Training & Education</h2>
-          <p>EDUCATION</p>
-          <p>Bachelor’s Degree in Journalism and Public Relations | University of PNG | Waigani Campus | 2015-2019</p>
-          <p>EDUCATION AND TRAINING BACKGROUND</p>
-          <ul class="education-list">
+      <section id="training" class="section">
+        <h2>Training & Education</h2>
+    
+        <h3>EDUCATION</h3>
+        <ul class="education-list">
+            <li>Bachelor’s Degree in Journalism and Public Relations | University of PNG | Waigani Campus | 2015-2019</li>
+        </ul>
+    
+        <h3>EDUCATION AND TRAINING BACKGROUND</h3>
+        <ul class="education-list">
             <li>Bachelor’s Degree in Journalism and Public Relations</li>
             <li>Certificate in National Broadcasting Cooperation Newsroom Electronic News Reporting Journalist</li>
             <li>Certificate on Disaster Mitigation and Preparedness Training for Journalists</li>
@@ -562,8 +556,9 @@
             <li>Certificate Financial Literacy with National Judiciary Staff and Services</li>
             <li>High School Certificates Grade 10 and Grade 12</li>
             <li>Award’s Certificates in Year 12’s Achievement Legal Studies and Geography</li>
-          </ul>
-        </section>
+        </ul>
+    </section>
+    
 
         <section id="blog" class="section">
           <h2>Blog</h2>
